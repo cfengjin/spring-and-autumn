@@ -34,7 +34,7 @@ Time complexity: O(n<sup>2</sup>)
 
 Space complexity: O(1)
 
-Here's an implementation for sorting integers in C++
+Here's an implementation to insertion sort integers in C++
 ```C++
 void insertion_sort(vector<int>& list) {
     for (int i = 1; i < list.size(); ++i) { // i starts at the second item
