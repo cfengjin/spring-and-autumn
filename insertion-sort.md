@@ -4,7 +4,9 @@ Insertion sort sorts a list of items from beginning to end by inserting the next
 
 <br />
 
-Let 5, 3, 4, 1, 2 be a list of numbers. We start sorting by splitting this list into two groups: sorted and unsorted.
+Let's insertion sort 5, 3, 4, 1, 2 in ascending order.
+
+We start by splitting this list into two groups: sorted and unsorted.
 
 Sorted | Unsorted
 -|-
@@ -14,7 +16,7 @@ Sorted | Unsorted
 
 <br />
 
-Now, we pick the next unsorted item and insert it into the correct position in our sorted list until there are no more items left.
+Then, we pick the next unsorted item and insert it into the correct position in our sorted list until there are no more items left.
 
 Sorted | Unsorted
 -|-
