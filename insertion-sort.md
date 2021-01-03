@@ -2,13 +2,17 @@
 
 Insertion sort sorts a list of items from beginning to end by inserting the next unsorted item into the correct spot among the already sorted items.
 
+<br />
+
 Let 5, 3, 4, 1, 2 be a list of numbers. We start sorting by splitting this list into two groups: sorted and unsorted.
 
 Sorted | Unsorted
 -|-
 5 | 3 4 1 2
 
-*Note: any single item on its own is trivially sorted.*
+*Note: any item by itself is trivially sorted.*
+
+<br />
 
 Now, we pick the next unsorted item and insert it into the correct position in our sorted list until there are no more items left.
 
@@ -19,6 +23,14 @@ Sorted | Unsorted
 3 4 5 | 1 2
 1 3 4 5 | 2
 1 2 3 4 5 |
+
+We're done!
+
+<br />
+
+Time complexity: O(n<sup>2</sup>)
+
+Space complexity: O(1)
 
 Here's an implementation for sorting integers in C++
 ```C++
