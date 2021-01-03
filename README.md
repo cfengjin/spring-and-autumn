@@ -1,1 +1,1 @@
-# learn-cs
+# Learn CS
