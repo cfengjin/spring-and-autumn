@@ -10,7 +10,7 @@ Sorted | Unsorted
 -|-
 5 | 3 4 1 2
 
-*Note: any item by itself is trivially sorted.*
+*Note: any item by itself is already sorted.*
 
 <br />
 
