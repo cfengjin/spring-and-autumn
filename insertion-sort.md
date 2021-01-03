@@ -23,13 +23,12 @@ Sorted | Unsorted
 Here's an implementation for sorting integers in C++
 ```C++
 void insertion_sort(vector<int>& list) {
-    for (int i = 1; i < list.size(); ++i) {
+    for (int i = 1; i < list.size(); ++i) { // i starts at the second item
         int unsorted_item = list[i];
         
         int j = i - 1;  // j starts at the end of the sorted list
-                        // and iterates backwards.
         
-        // Shift items to the right until we're at the right spot.
+        // Go backwards and shift items over to the right until we're at the right spot.
         while (j >= 0 && list[j] > list[i]) {
             list[j + 1] = list[j];
             --j;
