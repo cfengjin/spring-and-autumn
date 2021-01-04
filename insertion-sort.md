@@ -1,6 +1,6 @@
 # Insertion Sort
 
-Insertion sort sorts a list of items by continually taking the next unsorted item and **inserting** it into the correct spot among the items already sorted until the list is sorted.
+Insertion sort sorts a list of items by continually taking the next unsorted item and **inserting** it into the correct spot among the items already sorted.
 
 <br />
 
