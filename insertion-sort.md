@@ -21,10 +21,10 @@ Then, we pick the next unsorted item and **insert** it into the correct position
 Sorted | Unsorted
 -|-
 5 | 3 4 1 2
-3 5 | 4 1 2
-3 4 5 | 1 2
-1 3 4 5 | 2
-1 2 3 4 5 |
+**3** 5 | 4 1 2
+3 **4** 5 | 1 2
+**1** 3 4 5 | 2
+1 **2** 3 4 5 |
 
 ... and we're done!
 
