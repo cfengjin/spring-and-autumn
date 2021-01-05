@@ -1,2 +1,2 @@
 # 春秋 Spring and Autumn
-A collection of texts about the things I've learned.
+A collection of some of the things I've learned.
