@@ -40,7 +40,7 @@ void insertion_sort(vector<int>& list) {
     for (int i = 1; i < list.size(); ++i) { // i starts from the beginning of the unsorted list.
         int unsorted_item = list[i];
         
-        int j = i - 1;  // j starts at the end of the sorted list
+        int j = i - 1;  // j starts at the end of the sorted list.
         
         // Go backwards and shift items over to the right until we're at the right spot.
         while (j >= 0 && list[j] > list[i]) {
