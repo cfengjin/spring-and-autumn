@@ -14,8 +14,6 @@ Sorted | Unsorted
 
 *Note: any item by itself is already sorted.*
 
-<br />
-
 Then, we pick the next unsorted item and **insert** it into the correct position in our sorted list until there are no more items left.
 
 Sorted | Unsorted
