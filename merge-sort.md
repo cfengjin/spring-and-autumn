@@ -22,7 +22,7 @@ We start by divide this list into halves repeatedly until the halves are indivis
 
 Then, **merge** the sorted halves back together.
 
-*Note: any item by itself is already sorted.*
+*Note: any key (item) by itself is already sorted.*
 
 ```
  4 | 9 | 2 | 1 | 8 | 4 | 6 | 3 | 7
@@ -47,7 +47,8 @@ Space complexity: O(n)
 Here's an implementation to merge sort integers in C++:
 
 ```C++
-void merge_sort(vector<int>& list, int start, int end) { // Range is inclusive: [start, end]
+void merge_sort(vector<int>& list, int start, int end) // Range is inclusive: [start, end]
+{
     // Check that the list is divisible.
     if (start < end) {
         int divide = (start + end) / 2;
@@ -60,7 +61,8 @@ void merge_sort(vector<int>& list, int start, int end) { // Range is inclusive: 
     }
 }
 
-void merge(vector<int>& list, int start, int divide, int end) { // Range is inclusive: [start, divide] [divide + 1, end]
+void merge(vector<int>& list, int start, int divide, int end) // Range is inclusive: [start, divide] [divide + 1, end]
+{
     // Copy the sorted halves from the list so we can overwrite the entire list later.
     vector<int> left(list.begin() + start, list.begin() + divide + 1);
     vector<int> right(list.begin() + divide + 1, list.begin() + end + 1);
