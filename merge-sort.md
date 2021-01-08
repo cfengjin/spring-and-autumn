@@ -60,7 +60,7 @@ void merge_sort(vector<int>& list, int start, int end) { // Range is inclusive: 
     }
 }
 
-void merge(vector<int>& list, int start, int divide, int end) { // Range is inclusive: [start, end]
+void merge(vector<int>& list, int start, int divide, int end) { // Range is inclusive: [start, divide] [divide + 1, end]
     // Copy the sorted halves from the list so we can overwrite the entire list later.
     vector<int> left(list.begin() + start, list.begin() + divide + 1);
     vector<int> right(list.begin() + divide + 1, list.begin() + end + 1);
