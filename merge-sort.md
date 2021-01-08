@@ -9,15 +9,15 @@ Let's merge sort 4, 9, 2, 1, 8, 4, 6, 3, 7 in ascending order.
 We start by divide this list into halves repeatedly until the halves are indivisible.
 
 ```
-      [ 4 9 2 1 8 4 6 3 7 ]
+      [ 5 9 2 1 8 4 6 3 7 ]
 
-    [ 4 9 2 1 ]|[ 8 4 6 3 7 ]
+    [ 5 9 2 1 ]|[ 8 4 6 3 7 ]
 
-[ 4 9 ]|[ 2 1 ]|[ 8 4 ]|[ 6 3 7 ]
+[ 5 9 ]|[ 2 1 ]|[ 8 4 ]|[ 6 3 7 ]
 
- 4 | 9 | 2 | 1 | 8 | 4 | 6 |[ 3 7 ]
+ 5 | 9 | 2 | 1 | 8 | 4 | 6 |[ 3 7 ]
 
- 4 | 9 | 2 | 1 | 8 | 4 | 6 | 3 | 7
+ 5 | 9 | 2 | 1 | 8 | 4 | 6 | 3 | 7
 ```
 
 Then, **merge** the sorted halves back together.
@@ -25,13 +25,13 @@ Then, **merge** the sorted halves back together.
 *Note: any key (item) by itself is already sorted.*
 
 ```
- 4 | 9 | 2 | 1 | 8 | 4 | 6 | 3 | 7
+ 5 | 9 | 2 | 1 | 8 | 4 | 6 | 3 | 7
 
- 4 | 9 | 2 | 1 | 8 | 4 | 6 |[ 3 7 ]
+ 5 | 9 | 2 | 1 | 8 | 4 | 6 |[ 3 7 ]
 
-[ 4 9 ]|[ 1 2 ]|[ 4 8 ]|[ 3 6 7 ]
+[ 5 9 ]|[ 1 2 ]|[ 4 8 ]|[ 3 6 7 ]
 
-    [ 1 2 4 9 ]|[ 3 4 6 7 8 ]
+    [ 1 2 5 9 ]|[ 3 4 6 7 8 ]
     
       [ 1 2 3 4 5 6 7 8 9 ]
 ```
