@@ -72,13 +72,17 @@ void merge(vector<int>& list, int start, int divide, int end) // Range is inclus
     
     // Merge the sorted halves together and overwrite the list.
     for (int k = start; k <= end; ++k) {
-        if (j >= right.size()) { // If right half is merged.
+        // If one of the halves is merged, then take from the other half.
+        if (j >= right.size()) {
             list[k] = left[i];
             ++i;
-        } else if (i >= left.size()) { // If left half is merged.
+        } else if (i >= left.size()) {
             list[k] = right[j];
             ++j;
-        } else if (left[i] <= right[j]) {
+        }
+        
+        // Otherwise, take the smaller key between the two halves.
+        else if (left[i] <= right[j]) {
             list[k] = left[i];
             ++i;
         } else {
