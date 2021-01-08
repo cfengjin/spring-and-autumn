@@ -34,7 +34,8 @@ Space complexity: O(1)
 
 Here's an implementation to insertion sort integers in C++
 ```C++
-void insertion_sort(vector<int>& list) {
+void insertion_sort(vector<int>& list)
+{
     for (int i = 1; i < list.size(); ++i) { // i starts from the beginning of the unsorted list.
         int unsorted_key = list[i];
         int j = i - 1;  // j starts at the end of the sorted list.
