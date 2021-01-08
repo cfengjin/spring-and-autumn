@@ -69,7 +69,7 @@ void merge(vector<int>& list, int start, int divide, int end) { // Range is incl
     int j = 0; // Indexes into the right half;
     
     // Merge the sorted halves together and overwrite the list.
-    for (int k = begin; k <= end; ++k) {
+    for (int k = start; k <= end; ++k) {
         if (right.empty() || left[i] <= right[j]) {
             list[k] = left[i];
             ++i;
