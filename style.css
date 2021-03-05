@@ -1,0 +1,8 @@
+html {
+  font-size: 24px;
+}
+
+article {
+  max-width: 720px;
+  margin: 0 auto;
+}
