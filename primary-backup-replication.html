@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <article>
+      <h1>Primary-Backup Replication</h1>
+      <p>
+        Identical replicated state machines stay in sync by checking in with every other replica.
+        If any machine goes down, then the system can't progress.
+      </p>
+      <p>
+        Primary-backup replication introduces hierarchy and specialization to handle this issue.
+        Instead of each machine relying on every other machine, all machines rely on a primary machine.
+        If the primary goes down, then a readied backup machine will take over.
+        To keep track of who's the primary and who's the backup, an external service needs to be introduced: the view service.
+      </p>
+      <p>
+        A view holds a view number and information about who's the primary and who's the backup.
+        The view number is used to distinguish between the current view and previous views.
+      </p>
+      <p>
+        The view service holds the current view and updates it whenever it detects a change.
+      </p>
+    </article> 
+  </body>
+</html>
