@@ -22,7 +22,7 @@
         To keep track of which machine is the primary and which machine is the backup, an external service needs to be introduced: the view service.
         A view depicts which machines are the primary and the backup.
         In order to distinguish between the current view and previous ones, a view also has a view number.
-        The view service holds the current view and updates it whenever it detects a change.
+        The view service holds the current view and updates it whenever it hasn't heard from the two machines in a while.
       </p>
       <p>
         Clients contact the view service to know which machine to communicate with.
