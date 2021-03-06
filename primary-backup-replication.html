@@ -9,12 +9,12 @@
     <article>
       <h1>Primary-Backup Replication</h1>
       <p>
-        Identical replicated state machines stay in sync by checking in with every other replica.
+        Identical replicated state machines serve clients in sync by checking in with every other replica.
         If any machine goes down, then the system can't progress.
       </p>
       <p>
         Primary-backup replication introduces hierarchy and specialization to handle this issue.
-        Instead of each machine relying on every other machine, all machines rely on a primary machine.
+        Instead of each machine relying on every other machine, a primary machine takes on the responsibility of serving clients.
         If the primary goes down, then a readied backup machine will take over.
         To keep track of who's the primary and who's the backup, an external service needs to be introduced: the view service.
       </p>
