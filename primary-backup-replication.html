@@ -16,13 +16,14 @@
       <p>
         Primary-backup replication introduces hierarchy and specialization to handle this issue.
         Instead of machines relying on each other, a primary machine takes on the responsibility of serving clients and acts as a source of truth.
-        The primary forwards state changes and communicates with a backup machine in case the primary goes down.
-        When the backup goes down, the primary must successfully copy its state to any new backup in order for the state to persist.
+        The primary forwards state changes and communicates with backup machines in case the primary goes down.
+        When any backup goes down, the primary must successfully copy its state to any new backup in order for the state to persist.
+        This system should be internally consistent for there to be consistency externally.
       </p>
       <p>
-        To keep track of which machine is the primary and which machine is the backup, an external service needs to be introduced: the view service.
-        A view depicts which machines are the primary and the backup, and in order to distinguish between the current view and previous ones, a view also has a view number.
-        The view service holds the current view and updates it when it hasn't heard from the two machines in a while.
+        To keep track of which machine is the primary and which machines are backups, an external service needs to be introduced: the view service.
+        A view depicts which machines are which, and in order to distinguish between the current view and previous ones, a view also has a view number.
+        The view service holds the current view and updates it when needed.
       </p>
       <p>
         Clients contact the view service to know which machine to communicate with.
