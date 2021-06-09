@@ -58,7 +58,7 @@ const Map = () => {
     (hierarchy)
 
   // Set color scheme
-  const color = scaleSequential([root.height + 2 / root.height, 0], interpolateMagma)
+  const color = scaleSequential([root.height + 1 / root.height, 0], interpolateMagma)
 
   useEffect(() => {
     const svg = select(svgRef.current)
