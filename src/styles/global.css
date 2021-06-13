@@ -17,10 +17,11 @@ svg {
 .container {
   position: relative;
   width: 24rem;
-  margin-left: auto;
+  margin: 1rem auto 1rem 1rem;
   z-index: 1;
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 1rem 0 0 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
 }
 
 circle {
@@ -32,8 +33,9 @@ circle:hover {
 }
 
 article {
-  padding: 1.5rem 0;
-  margin: 1rem calc(720px * .0625);
+  padding: 1rem 0;
+  margin: 0 1rem;
+  word-wrap: break-word;
 }
 
 article h1 {
@@ -43,13 +45,8 @@ article h1 {
 @media screen and (max-width: 720px) {
   .container {
     top: 75vh;
-    width: 100vw;
-    min-height: calc(25vh);
-    border-radius: 1rem 1rem 0 0;
-  }
-
-  article {
-    margin: 0 auto;
-    width: 87.5vw;
+    min-height: calc(25vh - 1rem);
+    width: auto;
+    margin: 0 1rem 1rem 1rem;
   }
 }
