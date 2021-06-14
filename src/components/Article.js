@@ -1,4 +1,5 @@
 import * as React from "react"
+import "katex/dist/katex.min.css"
 
 const Article = (props) => {
   return (

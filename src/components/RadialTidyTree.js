@@ -22,13 +22,13 @@ const RadialTidyTree = props => {
 
   // Find the article if the seed article wasn't selected.
   if (selectedArticleHandle.tag) {
-    selectedArticle = articles.find(a => a.frontmatter.title === selectedArticleHandle.title && a.frontmatter.tags.includes(selectedArticleHandle.tag))
+    selectedArticle = articles.find(a => (a.frontmatter.title === selectedArticleHandle.title) && a.frontmatter.tags.includes(selectedArticleHandle.tag))
   }
 
   // Initialize radial tidy tree dimensions from data.
   const seed = tree()
-    .size([2 * Math.PI, Math.min(width, height) / 2])
-    .separation((a, b) => (a.parent == b.parent ? 1 : BRANCH_SEPARATION_FACTOR) / a.depth)
+    .size([2 * Math.PI, Math.min(width, height) / 3])
+    .separation((a, b) => ((a.parent === b.parent) ? 1 : BRANCH_SEPARATION_FACTOR) / a.depth)
     (props.data)
 
   // Holds onto the DOM elements.
@@ -45,7 +45,9 @@ const RadialTidyTree = props => {
     const nodes = select(nodesRef.current)
     const labels = select(labelsRef.current)
 
-    svg.attr("viewBox", viewBox)
+    svg
+      .attr("viewBox", viewBox)
+      .style("cursor", "move")
 
     svg.call(zoom()
       .on("zoom", event => group.attr("transform", event.transform)))
@@ -83,17 +85,18 @@ const RadialTidyTree = props => {
           rotate(${d.x >= Math.PI ? 180 : 0})
         `)
         .attr("dy", "0.31em")
-        .attr("x", d => d.x < Math.PI === !d.children ? NODE_PADDING : -NODE_PADDING)
-        .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
+        .attr("x", d => (d.x < Math.PI) === !d.children ? NODE_PADDING : -NODE_PADDING)
+        .attr("text-anchor", d => (d.x < Math.PI) === !d.children ? "start" : "end")
         .attr("stroke", "black")
         .attr("stroke-width", TEXT_STROKE_WIDTH)
       .clone(true).lower()
         .attr("stroke", "white")
         .attr("stroke-width", TEXT_BACKGROUND_STROKE_WIDTH)
-        .on("click", (_, d) => {
+        .on("click", (event, d) => {
+          event.stopPropagation()
           setSelectedArticleHandle({ title: d.data.title, tag: d.data.tag })
         })
-
+        .style("cursor", "pointer")
   })
 
   return (
