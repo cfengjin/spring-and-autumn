@@ -8,10 +8,11 @@ const RadialTidyTree = props => {
   const NODE_PADDING = 12
   const BRANCH_SEPARATION_FACTOR = 2
   const TEXT_STROKE_WIDTH = 1
-  const TEXT_BACKGROUND_STROKE_WIDTH = 12
+  const TEXT_BACKGROUND_STROKE_WIDTH = 6
+  const SEED_PADDING = 180
 
   const [width, height] = useWindowSize()
-  const viewBox = [-width / 2, -height / 2, width, height]
+  const viewBox = [SEED_PADDING - width, -height / 2, width, height]
 
   const articles = props.articles
   const seedArticle = articles[articles.length - 1]
@@ -27,7 +28,7 @@ const RadialTidyTree = props => {
 
   // Initialize radial tidy tree dimensions from data.
   const seed = tree()
-    .size([2 * Math.PI, Math.min(width, height) / 3])
+    .size([-Math.PI, Math.min(width, height) * (34 / 55)])
     .separation((a, b) => ((a.parent === b.parent) ? 1 : BRANCH_SEPARATION_FACTOR) / a.depth)
     (props.data)
 
@@ -82,11 +83,11 @@ const RadialTidyTree = props => {
         .attr("transform", d => `
           rotate(${d.x * 180 / Math.PI - 90}) 
           translate(${d.y},0) 
-          rotate(${d.x >= Math.PI ? 180 : 0})
+          rotate(${d.x >= Math.PI ? 0 : 180})
         `)
         .attr("dy", "0.31em")
-        .attr("x", d => (d.x < Math.PI) === !d.children ? NODE_PADDING : -NODE_PADDING)
-        .attr("text-anchor", d => (d.x < Math.PI) === !d.children ? "start" : "end")
+        .attr("x", d => (d.x < Math.PI) === !d.children ? -NODE_PADDING : NODE_PADDING)
+        .attr("text-anchor", d => (d.x < Math.PI) === !d.children ? "end" : "start")
         .attr("stroke", "black")
         .attr("stroke-width", TEXT_STROKE_WIDTH)
       .clone(true).lower()

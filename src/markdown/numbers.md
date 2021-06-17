@@ -87,7 +87,7 @@ Let $P$ be the set of all positive numbers.
 
 For every number $a$, only one of the following holds:
 - $a = 0$,
-- $a$ is in $P$, or
+- $a$ is in $P$,
 - $-a$ is in $P$.
 
 ---
