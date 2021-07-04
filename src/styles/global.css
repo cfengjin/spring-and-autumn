@@ -25,14 +25,6 @@ svg {
   border-radius: 1rem;
 }
 
-circle {
-  transition: transform .2s ease-in-out;
-}
-
-circle:hover {
-  transform: scale(1.02);
-}
-
 article {
   margin-right: .5rem;
   padding: 1rem;

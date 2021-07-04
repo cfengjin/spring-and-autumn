@@ -31,3 +31,40 @@ If $g$ is continuous at $a$ and $f$ is continuous at $g(a)$, then $f \circ g$ is
 If $f$ is continuous at $a$ and $f(a) > 0$, then there is an open interval around $a$ that maps **all** of its points above $0$.
 
 Likewise, if $f$ is continuous at $a$ and $f(a) < 0$, then there is an open interval around $a$ that maps **all** of its points below $0$.
+
+## Theorem 4
+
+If $f$ is continuous on $[a, b]$, then $f$ can take on any value between $f(a)$ and $f(b)$.
+
+## Theorem 5
+
+If $f$ is continuous on $[a, b]$, then $f$ is lower and upper bounded on $[a, b]$.
+
+## Theorem 6
+
+If $f$ is continuous on $[a, b]$, then $f$ has a maximum and minimum on $[a, b]$.
+
+## Theorem 7
+
+If $n$ is odd, then any equation
+$$
+x^n + a_{n-1}x^{n-1} + ... + a_0 = 0
+$$
+has a root.
+
+The left-hand side of the equation is just a number, and any positive number has a root and any number $\alpha$ has an odd root $n$:
+$$
+\sqrt[n]{\alpha} = x
+$$
+$$
+\alpha = x^n
+$$
+$$
+x^n - \alpha = 0
+$$
+
+## Theorem 8
+
+If $f$ is an even-degree polynomial, then it has a minimum or maximum.
+
+There are no solutions for $x$ when $f(x)$ is below the minimum or above the maximum.

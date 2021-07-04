@@ -28,7 +28,7 @@ const RadialTidyTree = props => {
 
   // Initialize radial tidy tree dimensions from data.
   const seed = tree()
-    .size([-Math.PI, Math.min(width, height) * (34 / 55)])
+    .size([-Math.PI, Math.min(width, height) * 0.75])
     .separation((a, b) => ((a.parent === b.parent) ? 1 : BRANCH_SEPARATION_FACTOR) / a.depth)
     (props.data)
 
